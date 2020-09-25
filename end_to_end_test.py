@@ -41,8 +41,6 @@ class NewVisitorTest(unittest.TestCase):
         self._check_for_row_in_list_table('1: Start playing Metal Gear Solid.')
         self._check_for_row_in_list_table('2: Lose weight (for real this time, I swear).')
 
-        self.fail('This test is not finished yet.')
-
 
 if __name__ == '__main__':
     unittest.main()
