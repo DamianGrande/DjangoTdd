@@ -68,7 +68,7 @@ class NewVisitorTest(LiveServerTestCase):
         self.browser.get(self.live_server_url)
         page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('Clean the bathroom.', page_text)
-        self.assertNotIn('Start playing Metal Gear Solid.')
+        self.assertNotIn('Start playing Metal Gear Solid.', page_text)
 
         input_box = self.browser.find_element_by_id('id_new_item')
         input_box.send_keys('Looking for a new job without pairing.')
