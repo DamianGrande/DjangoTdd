@@ -80,8 +80,10 @@ class NewVisitorTest(LiveServerTestCase):
 
         self.assertNotEqual(url_user_1, url_user_2)
 
+        page_text = self.browser.find_element_by_tag_name('body').text
+
         self.assertNotIn('Clean the bathroom', page_text)
-        self.assertIn('Looking for a new job without pairing.')
+        self.assertIn('Looking for a new job without pairing.', page_text)
 
 
 if __name__ == '__main__':
