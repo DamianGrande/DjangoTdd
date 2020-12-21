@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+import logging.config
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,6 +31,21 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 LOGGING_CONFIG = None
+LOGGING = {
+
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d: %(message)s',
+        },
+        'simple': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s',
+        },
+    },
+}
+
+logging.config.dictConfig(LOGGING)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
