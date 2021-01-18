@@ -12,9 +12,9 @@ class NewVisitorTest(StaticLiveServerTestCase):
     MAX_WAIT = 10
 
     def setUp(self):
-        from pyvirtualdisplay import Display
-        display = Display(visible=0, size=(800, 600))
-        display.start()
+        #from pyvirtualdisplay import Display
+        #display = Display(visible=0, size=(800, 600))
+        #display.start()
         self.browser = webdriver.Firefox()
         staging_server = os.environ.get('STAGING_SERVER')
         if staging_server:
